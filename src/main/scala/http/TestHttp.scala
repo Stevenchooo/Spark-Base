@@ -11,7 +11,7 @@ object TestHttp {
   def main(args: Array[String]): Unit = {
 
     val url = "http://192.168.1.21:9999/search/?geoip=192.168.1.1"
-    val esurl = "http://localhost:9200/sheshou_info/_search?q=osname:windows 7&size=1"
+    val esurl = "http://localhost:9200/spark/_search?q=osname:windows 7&size=1"
 
     val urlcons = new URL(esurl)
 

@@ -17,41 +17,37 @@ object ConnectionPool {
   val MYSQL_PASSWORD = "root"
 
   // connection pool settings
-
   private val connectionPool: Option[BoneCP] = {
-
-    try{
+    try {
       Class.forName("com.mysql.jdbc.Driver")
       val config = new BoneCPConfig()
       config.setJdbcUrl(JDBC_URL)
       config.setUsername(MYSQL_USER)
       config.setPassword(MYSQL_PASSWORD)
       config.setLazyInit(true)
-
       config.setMinConnectionsPerPartition(3)
       config.setMaxConnectionsPerPartition(5)
       config.setPartitionCount(5)
       config.setCloseConnectionWatch(true)
       config.setLogStatementsEnabled(false)
       Some(new BoneCP(config))
-    }catch {
+    } catch {
       case exception: Exception =>
         logger.warn("Create Connection Error: \n" + exception.printStackTrace())
         None
     }
-
   }
 
-  def getConnection:Option[Connection] ={
+  def getConnection: Option[Connection] = {
     connectionPool match {
       case Some(connPool) => Some(connPool.getConnection)
       case None => None
     }
   }
-  def closeConnection(connection:Connection): Unit = {
-    if(!connection.isClosed) {
-      connection.close()
 
+  def closeConnection(connection: Connection): Unit = {
+    if (!connection.isClosed) {
+      connection.close()
     }
   }
 
@@ -60,5 +56,4 @@ object ConnectionPool {
     getConnection
     println("==========connected successfully!==============")
   }
-
 }

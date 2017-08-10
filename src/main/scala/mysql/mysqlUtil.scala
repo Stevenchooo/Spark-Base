@@ -11,24 +11,19 @@ import org.apache.spark.{SparkConf, SparkContext}
   * Created by steven on 2017/7/17.
   */
 object mysqlUtil {
-
   val logger = LoggerFactory.getLogger(this.getClass)
   //  case class insertformat(wid:String,username:String,source:String) extends Serializable
   def insertIntoMysql(con: Connection, sql: String, data: RDD[(String, String, String)]) = {
-
     val ps = con.prepareStatement(sql)
     try {
       // close autocommit
       con.setAutoCommit(false)
       data.foreach(data => {
-
         ps.setString(1, data._1)
         ps.setString(2, data._2)
         ps.setString(3, data._3)
         ps.addBatch()
-
       })
-
 
       ps.executeBatch()
       con.commit()
