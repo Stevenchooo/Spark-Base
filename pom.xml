@@ -54,6 +54,7 @@
             <version>1.9.0</version>
         </dependency>
 
+
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka_2.10</artifactId>
