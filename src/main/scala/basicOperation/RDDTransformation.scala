@@ -1,17 +1,14 @@
-package com.cloudera.sparkwordcount
-
-import org.apache.spark.rdd.RDD
-import org.apache.spark.{SparkConf, SparkContext}
-
 /**
   * Created by steven on 2017/7/31.
   */
-object testRDD {
+import org.apache.spark.rdd.RDD
+import org.apache.spark.{SparkConf, SparkContext}
+object RDDTransformation {
   def main(args: Array[String]): Unit = {
     val sc = new SparkContext(new SparkConf().setAppName("Steven005").setMaster("local"))
 
     /*
-       map()           参数是函数，函数应用于RDD每一个元素，返回值是新的RDD
+      map()           参数是函数，函数应用于RDD每一个元素，返回值是新的RDD
       flatMap()       参数是函数，函数应用于RDD每一个元素，将元素数据进行拆分，变成迭代器，返回值是新的RDD
       filter()        参数是函数，函数会过滤掉不符合条件的元素，返回值是新的RDD
       distinct()      没有参数，将RDD里的元素进行去重操作
