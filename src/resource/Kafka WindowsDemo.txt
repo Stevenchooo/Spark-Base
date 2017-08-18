@@ -1,20 +1,19 @@
 
 
 
-1. ¸ÄZookeeper£¬confÄ¿Â¼ÏÂµÄzoo.cfg ÎÄ¼şÀïµÄdataDir=D:\\Java\\Tool\\zookeeper-3.4.6\\tmp¡£
-2. ¸ÄKafka£¬configÄ¿Â¼ÏÂµÄserver.properties ÎÄ¼şÀïµÄlog.dirs¡£
-3. .\zkServer,Æô¶¯Zookeeper
-4. .\bin\windows\kafka-server-start.bat .\config\server.properties ,Æô¶¯Kafka
-5. ½øÈëKafka£¬windowsÄ¿Â¼ÏÂ
-6. kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test.topic   ´´½¨Ò»¸öTopic
-7. kafka-console-producer.bat --broker-list localhost:9092 --topic test.topic                                      ´ò¿ªÒ»¸öProducer
-8. kafka-console-consumer.bat --zookeeper localhost:2181 --topic test.topic                                        ´ò¿ªConsumer
-9. ÔÚProducerÖĞÊäÈë×Ö·û£¬»áÔÚConsumerÖĞ¿´µ½¡£
+1. æ”¹Zookeeperï¼Œconfç›®å½•ä¸‹çš„zoo.cfg æ–‡ä»¶é‡Œçš„dataDir=D:\\Java\\Tool\\zookeeper-3.4.6\\tmpã€‚
+2. æ”¹Kafkaï¼Œconfigç›®å½•ä¸‹çš„server.properties æ–‡ä»¶é‡Œçš„log.dirsã€‚
+3. .\zkServer,å¯åŠ¨Zookeeper
+4. .\bin\windows\kafka-server-start.bat .\config\server.properties ,å¯åŠ¨Kafka
+5. è¿›å…¥Kafkaï¼Œwindowsç›®å½•ä¸‹
+6. kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test.topic   åˆ›å»ºä¸€ä¸ªTopic
+7. kafka-console-producer.bat --broker-list localhost:9092 --topic test.topic                                      æ‰“å¼€ä¸€ä¸ªProducer
+8. kafka-console-consumer.bat --zookeeper localhost:2181 --topic test.topic                                        æ‰“å¼€Consumer
+9. åœ¨Producerä¸­è¾“å…¥å­—ç¬¦ï¼Œä¼šåœ¨Consumerä¸­çœ‹åˆ°ã€‚
 
 
 
 
-
-
+kafka-console-consumer.bat --zookeeper localhost:2181 --topic test.topic --from-beginning
 
 
