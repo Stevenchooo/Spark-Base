@@ -3,8 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.Steven.spark</groupId>
-    <artifactId>spark-basic</artifactId>
+    <groupId>com.Steven</groupId>
+    <artifactId>Spark-Base</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
         <maven.compiler.source>1.7</maven.compiler.source>
@@ -15,8 +15,6 @@
         <hadoop.version>2.6.4</hadoop.version>
     </properties>
     <dependencies>
-
-
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
@@ -72,7 +70,5 @@
             <artifactId>spark-streaming-kafka_2.10</artifactId>
             <version>1.6.1</version>
         </dependency>
-
-
     </dependencies>
 </project>
