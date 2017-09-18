@@ -37,7 +37,6 @@ set hive.exec.parallel=true;
 set hive.exec.parallel.thread.number=16;
 
 
-
 不分区
 set hive.mapred.mode=nonstrict; 
 
@@ -49,7 +48,6 @@ set hive.exec.dynamic.partition.mode=nonstrict;
 
 任务名参数设置
 set mapred.job.name='LBI_SOR.T_SP_COST_DTL_D_MID2_01'; 
-
 
 
 改名： ALTER TABLE table_name RENAME TO new_table_name
@@ -140,6 +138,7 @@ DISTRIBUTE BY unique_id;
 hive中的distribute by是控制在map端如何拆分数据给reduce端的。
 hive会根据distribute by后面列，根据reduce的个数进行数据分发，默认是采用hash算法。
 对于distribute by进行测试，一定要分配多reduce进行处理，否则无法看到distribute by的效果。
+
 
 55.        AESEncrypt4AD
 56.        AESDecrypt4AD  
